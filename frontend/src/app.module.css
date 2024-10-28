@@ -1,0 +1,42 @@
+.main {
+  margin: 0 auto;
+  width: min(720px, 100% - 8px * 2);
+}
+
+.title {
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 40px;
+}
+
+.input {
+  visibility: hidden;
+  position: absolute;
+}
+
+.list {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  list-style: none;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  cursor: pointer;
+}
+
+.todo-text {
+  flex-grow: 1;
+  word-break: break-word;
+
+  &.is-checked {
+    opacity: 0.5;
+    text-decoration: line-through;
+  }
+}

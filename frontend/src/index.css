@@ -1,0 +1,16 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-200: #fdf7e4;
+}
+
+#root {
+  background: var(--primary-200);
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+}

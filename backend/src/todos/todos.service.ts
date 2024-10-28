@@ -35,7 +35,26 @@ export class TodosService {
   }
 
   update(id: number, updateTodoDto: UpdateTodoDto) {
-    return `This action updates a #${id} todo`;
+    // Find the todo to be changed
+    const todoIndex = this.todos.findIndex((item) => item.id === id);
+    const todo = this.todos[todoIndex];
+
+    // Return error if unable to find it
+    if (todoIndex === -1) {
+      throw new NotFoundException(`Todo with id ${id} not found`);
+    }
+
+    // Update the todo
+    this.todos[todoIndex] = {
+      id: todo.id,
+      ...updateTodoDto,
+    };
+
+    // Return response
+    return {
+      message: `This action updated a #${id} todo`,
+      details: updateTodoDto,
+    };
   }
 
   remove(id: number) {
